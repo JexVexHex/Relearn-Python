@@ -1,0 +1,6 @@
+ipykernel
+gradio
+numpy
+pandas
+openai
+llama-index
