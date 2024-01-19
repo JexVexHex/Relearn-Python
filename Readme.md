@@ -4,7 +4,7 @@ Introduction to Python
 
 ## Description
 
-This are my files following an quick introductory Python course:
+This are my files following a quick introductory Python course:
 [Master Python Basics in Just 1 Hour](https://youtu.be/UBkFTCVRtNA?si=lA6_xji6nOziqS2-)
 
 ## Table of Contents
