@@ -20,7 +20,7 @@ Run the .ipynb files in Jupyter Notebooks
 
 ## Usage
 
-Install Jupyter Notebook in VSCode or use an online service such as Github's Codespaces, Google's Colab, Huggingface or Kaggle
+Install Jupyter Notebook in VSCode or use an online service such as Github's Codespaces, Google's Colab, Hugging Face or Kaggle
 
 ## Contributing
 
