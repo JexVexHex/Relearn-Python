@@ -1,8 +1,11 @@
 # Project Name
 
+Introduction to Python
+
 ## Description
 
-[Provide a brief description of your project]
+This are my files following an quick introductory Python course:
+[Master Python Basics in Just 1 Hour](https://youtu.be/UBkFTCVRtNA?si=lA6_xji6nOziqS2-)
 
 ## Table of Contents
 
@@ -13,15 +16,15 @@
 
 ## Installation
 
-[Explain how to install and set up your project]
+Run the .ipynb files in Jupyter Notebooks
 
 ## Usage
 
-[Provide instructions on how to use your project]
+Install Jupyter Notebook in VSCode or use an online service such as Google's Colab or Kaggle
 
 ## Contributing
 
-[Explain how others can contribute to your project]
+Feel free to add essentials for n00bs.
 
 ## License
 
