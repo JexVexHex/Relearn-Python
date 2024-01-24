@@ -1,0 +1,84 @@
+User Input,flag,username,timestamp
+"Hello, how are you?",,,2024-01-23 22:43:48.070115
+"Hello, how are you?",,,2024-01-23 22:45:39.210945
+"Hello, how are you?",,,2024-01-23 22:49:52.705000
+"Hello, how are you?",,,2024-01-23 23:05:53.261695
+Hi,,,2024-01-23 23:08:12.263190
+Testing,,,2024-01-23 23:09:47.799147
+test,,,2024-01-23 23:10:33.647815
+"Which Star Trek character is famous for saying, ""Live Long and Prosper.""?",,,2024-01-23 23:15:26.329578
+"Which Star Trek character is famous for saying, ""Live Long and Prosper.""?",,,2024-01-23 23:17:14.444473
+What time is it where you are?,,,2024-01-23 23:20:06.145565
+What is your name?,,,2024-01-23 23:22:01.597162
+Please sum the following which is in prefix format: (+ 5 10 15 20 25 30),,,2024-01-23 23:31:34.496626
+Thank you. That was fast and accurate.,,,2024-01-23 23:32:03.296387
+I've just finished this Gradio interface. Just checking if it is working,,,2024-01-23 23:42:05.936837
+"'<code>
+import gradio as gr
+import openai
+import os
+from dotenv import load_dotenv
+
+# Set up OpenAI API credentials
+# Read from environment variable or file. Never hardcode your API key!
+try:
+    load_dotenv(os.path.join(os.getcwd(), "".env""))
+    openai.api_key = os.getenv(""OPENAI_API_KEY"")
+    # print(openai.api_key)
+except:
+    exit(""Failed to load OpenAI API key. Check your environment variables."")
+
+# Define the chat context variable
+chat_context = """"
+
+# Define the function to be used by Gradio
+def generate_response(input_text):
+    global chat_context
+    
+    # Combine the input text with the chat context
+    input_text = chat_context + input_text
+    
+    # Generate the response using OpenAI's LLM
+    response = openai.chat.completions.create(
+        # model = ""gpt-3.5-turbo"",
+        model = ""gpt-4-turbo"",
+        messages=[
+            {
+            ""role"": ""user"",
+            ""content"": input_text
+            }
+        ],
+        max_tokens=100,
+        n=1,
+        stop=None,
+        temperature=0.7,
+    )
+    
+    # Get the generated response
+    response_text = response.choices[0].message.content
+    
+    # Update the chat context
+    chat_context += input_text + "" "" + response_text
+    
+    return response_text
+
+# Define the Gradio interface
+iface = gr.Interface(
+    fn=generate_response,
+    inputs=gr.Textbox(lines=2, label=""User Input""),
+    outputs=gr.Textbox(label=""LLM Response""),
+    title=""OpenAI LLM Chat"",
+    description=""Enter your message and get a response from the LLM."",
+    examples=[[""Hello, how are you?""]],
+    allow_flagging=""auto""
+)
+
+# Run the Gradio interface
+iface.launch()
+
+</code>
+
+I would like to include a ""hero"" row at the top.
+Where I can add an image that is about 75px high and spans 100%",,,2024-01-23 23:44:13.934304
+Please respond with a few lines of Lorem Ipsum,,,2024-01-24 01:29:07.831540
+Please respond with a few lines of Lorem Ipsum,,,2024-01-24 01:32:16.176179
